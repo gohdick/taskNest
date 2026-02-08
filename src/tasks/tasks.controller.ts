@@ -3,7 +3,6 @@ import {
   Controller,
   Delete,
   Get,
-  HttpCode,
   Param,
   ParseIntPipe,
   Post,
@@ -40,8 +39,8 @@ export class TasksController {
   }
 
   @Delete(':id')
-  @HttpCode(204)
   async remove(@Param('id', ParseIntPipe) id: number) {
     await this.tasksService.softDelete(id);
+    return { deleted: true };
   }
 }
