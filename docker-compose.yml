@@ -40,7 +40,7 @@ services:
     volumes:
       - .:/app
       - /app/node_modules
-    command: npm run start:dev
+    command: sh -c "npm ci && npm run start:dev"
 
 volumes:
   tasknest_mysql_data:
