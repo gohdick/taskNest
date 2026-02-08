@@ -8,6 +8,7 @@ import { SuccessResponseInterceptor } from './common/interceptors/success-respon
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
+  // disable cors
   app.enableCors({
     origin: process.env.CORS_ORIGIN ?? 'http://localhost:5173',
   });
